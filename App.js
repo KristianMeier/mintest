@@ -1,20 +1,19 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+// husk at installeret react-native-webview
+// https://www.c-sharpcorner.com/article/convert-your-website-into-a-mobile-app-with-react-native/
+// I expo, brug den midster valgmulighed "LAN".
+// Dernæst, åben en iOS eller Android simulator
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+import * as React from "react";
+import { WebView } from "react-native-webview";
+export default class App extends React.Component {
+  render() {
+    return (
+      <WebView
+        source={{
+          uri: "https://vannilla-js-basic-project-22-products.netlify.app/", //Indsæt link
+        }}
+        style={{ marginTop: 20 }}
+      />
+    );
+  }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
